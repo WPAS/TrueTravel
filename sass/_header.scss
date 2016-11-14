@@ -1,33 +1,37 @@
 header {
   position: relative;
   color: white;
+  text-shadow: 2px 2px 2px black, 0 0 2px black;
   h1 {
     position: absolute;
     left: 12%;
     top: 7%;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
   }
   p {
     position: absolute;
     left: 42%;
-    top: 47%;
-
+    top: 54%;
+    width: 50%;
+    font-size: 1.2rem;
+  }
+  span {
+    color: gold;
   }
   %gallery-navs {
     position: absolute;
     display: block;
     font-size: 2rem;
-    padding-top: 25%;
+    top: 42%;
     cursor: pointer;
     color: white;
     width: 5%;
+    font-weight: 900;
   }
-
   #gallery-nav1 {
     @extend %gallery-navs;
     left: 3%;
   }
-
   #gallery-nav2 {
     @extend %gallery-navs;
     left: 92%;
