@@ -41,11 +41,13 @@
     left: 3%;
     top: 1rem;
     background: lightblue; //should be changed into variable later
+    padding-bottom: 1rem;
     h1 {
       width: 100%;
       margin-left: 0;
     }
     h3 {
+      font-size: 1rem;
       text-align: center;
     }
     p {
