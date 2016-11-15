@@ -1,7 +1,7 @@
 %mobile-nav-background {
     background-color: rgba(0, 0, 0, .8);
     padding: .6rem;
-    color: white;
+    color: gold;
 }
 
 #nav-button, #hider {
@@ -22,7 +22,7 @@ nav {
     text-decoration: none;
     display: block; //to increase area reacting on click/touch
     &:link, &:visited {
-      color: white;
+      color: gold;
     }
   }
   ul {

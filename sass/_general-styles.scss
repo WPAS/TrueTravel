@@ -11,8 +11,12 @@ body {
   font-size: 100%;
 }
 
-article, aside, figure, footer, header, nav, section, details, summary {
+article, aside, footer, header, nav, section, details, summary {
   display: block;
+}
+
+figure {
+  display: inline-block;
 }
 
 header, section, footer, nav {
@@ -24,9 +28,8 @@ img, video, canvas {
 }
 
 .container {
-  width: 90%;
+  width: 98%;
   margin: 0 auto;
-  padding: 1.5rem 0;
 }
 
 .hidden {

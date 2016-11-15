@@ -13,11 +13,9 @@ function test_match_media_with_listener(){
 
   function WidthChange(mediaQuery) {
     if(mediaQuery.matches) {
-      console.log('yes');
       navigation.classList.add("hidden");
       button.classList.remove("hidden");
     } else {
-      console.log('no');
       navigation.classList.remove("hidden");
       button.classList.add("hidden");
       hider.classList.add("hidden");
@@ -37,7 +35,7 @@ hider.addEventListener("click", function() {
   navigation.classList.add("hidden");
   button.classList.remove("hidden");
   hider.classList.add("hidden");
-});
+}); //mobile nav toggle end
 
 //slider
 
@@ -63,7 +61,49 @@ btnPrev.addEventListener("click", function() {
   }
   slides[counter].classList.remove("hidden");
 
-});
+}); //slider end
+
+
+//gallery hider
+
+var morePlaces = document.querySelectorAll(".more-places");
+var placesRevealer = document.querySelector("#places-revealer");
+console.log(morePlaces);
+
+function test_match_media_with_listener1000(){
+  var mq = window.matchMedia("(max-width: 1000px)");
+  mq.addListener(WidthChange);
+  WidthChange(mq);
+
+  function WidthChange(mediaQuery) {
+    if(mediaQuery.matches) {
+      console.log('yes');
+      for (i = 0; i < morePlaces.length; i++) {
+        morePlaces[i].classList.add("hidden");
+      }
+      placesRevealer.classList.remove("hidden");
+    } else {
+      console.log('no');
+      for (i = 0; i < morePlaces.length; i++) {
+        morePlaces[i].classList.remove("hidden");
+      }
+      placesRevealer.classList.add("hidden");
+    }
+  }
+}
+
+test_match_media_with_listener1000()
+
+placesRevealer.addEventListener("click", function() {
+  for (i = 0; i < morePlaces.length; i++) {
+    morePlaces[i].classList.toggle("hidden");
+  }
+  if (morePlaces[0].classList.contains("hidden")) {
+    placesRevealer.innerText = "Show more places";
+    } else {
+    placesRevealer.innerText = "Hide additional places";
+  }
+})
 
 
 
@@ -71,19 +111,17 @@ btnPrev.addEventListener("click", function() {
 
 // TO BE ADDED
 //
-// nav responsivness and animation
+// mobile nav animation
 //
-// simple slider
-//
-// hiding part of places section
+// hiding/revealing half of places section for mobiles/tablets
 //
 // modal
 //
 // accordion
 //
-// do not forget anchor scrolling animation script!
+// do not forget anchor scrolling animation script!!
 //
-// Later - form validation
+// Later, if time allows - form validation
 
 
 });

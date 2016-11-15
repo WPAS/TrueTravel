@@ -1,0 +1,22 @@
+#places {
+  background: $mainBackground;
+  h1 {
+    width: 102%;
+    text-align: center;
+    margin: 0;
+    padding: .5rem;
+    background: $smallButShiny;
+    margin-left: -1%;
+    margin-bottom: 1rem;
+    border-bottom: .1rem solid $shinyEdges;
+    border-top: .1rem solid $shinyEdges;
+  }
+  figure {
+    width: 48%;
+    margin: .5%;
+    img {
+    border-radius: 50%;
+    }
+  }
+
+}
