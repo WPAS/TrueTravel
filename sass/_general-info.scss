@@ -1,0 +1,12 @@
+#general-info {
+  padding: 1.2rem 1.8rem;
+  line-height: 1.6;
+  p:first-of-type::first-letter {
+    font-size: 4.7rem;
+    font-family: Georgia;
+    float: left;
+    padding: 0 .5rem 0 0;
+    line-height: 1;
+    color: $smallButShiny;
+  }
+}

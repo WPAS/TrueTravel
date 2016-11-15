@@ -1,22 +1,72 @@
+%goldBar {
+  background: $smallButShiny;
+  border-bottom: .1rem solid $shinyEdges;
+  border-top: .1rem solid $shinyEdges;
+  padding: .2rem .4rem 0;
+}
+
 #places {
   background: $mainBackground;
+  padding-bottom: .5rem;
+  position: relative;
   h1 {
+    @extend %goldBar;
     width: 102%;
     text-align: center;
     margin: 0;
     padding: .5rem;
-    background: $smallButShiny;
     margin-left: -1%;
     margin-bottom: 1rem;
-    border-bottom: .1rem solid $shinyEdges;
-    border-top: .1rem solid $shinyEdges;
   }
   figure {
-    width: 48%;
-    margin: .5%;
+    position: relative;
+    width: 47%;
+    margin: 1%;
     img {
     border-radius: 50%;
+    }
+    figcaption {
+      @extend %goldBar;
+      position: absolute;
+      font-size: .8rem;
+      left: 33%;
+      top: 65%;
+      width: 68%;
+    }
+  }
+  .modal {
+    display: none;
+    position: absolute;
+    width: 94%;
+    left: 3%;
+    top: 1rem;
+    background: lightblue; //should be changed into variable later
+    h1 {
+      width: 100%;
+      margin-left: 0;
+    }
+    h3 {
+      text-align: center;
+    }
+    p {
+      padding: 0 1rem;
     }
   }
 
 }
+
+#places-revealer, .modal-hider {
+  @extend %goldBar;
+  display: block;
+  font-size: .8rem;
+  margin: .4rem auto;
+  text-align: center;
+  border-left: none;
+  border-right: none;
+  padding-bottom: .2rem;
+  &:focus {
+    outline: none;
+  }
+}
+
+//modal styles

@@ -99,21 +99,49 @@ placesRevealer.addEventListener("click", function() {
     morePlaces[i].classList.toggle("hidden");
   }
   if (morePlaces[0].classList.contains("hidden")) {
-    placesRevealer.innerText = "Show more places";
+    placesRevealer.innerText = "Check more places";
     } else {
     placesRevealer.innerText = "Hide additional places";
   }
 })
 
+//modal code
+
+var figure = document.querySelectorAll("#places figure");
+var modalHeader = document.querySelectorAll(".modal h1");
+var modalHider = document.querySelectorAll(".modal-hider")
+console.log(modalHider);
+
+for (i=0; i<figure.length; i++) {
+  figure[i].addEventListener("click", function() {
+    var modalId = this.dataset.modal;
+    var modalToShow = document.querySelector(modalId);
+    modalToShow.style.display = "block";
+  });
+}
+
+function hideModal(element) {
+  for (i = 0; i < element.length; i++) {
+    element[i].addEventListener("click", function() {
+        this.parentElement.style.display = "none";
+    });
+  }
+}
+
+hideModal(modalHeader);
+hideModal(modalHider);
 
 
+
+
+
+//IS CLICK ALSO TOUCH???????????????
 
 
 // TO BE ADDED
 //
 // mobile nav animation
 //
-// hiding/revealing half of places section for mobiles/tablets
 //
 // modal
 //
