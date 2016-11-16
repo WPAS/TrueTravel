@@ -33,6 +33,37 @@ header {
     @extend %gallery-navs;
     left: 92%;
   }
+  .container-large-screen {
+    position: relative;
+  }
+  @media (min-width: $header-photo-width) {
+    background: black;
+    %gallery-navs {
+      font-size: 3rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.5rem;
+      top: 70%;
+    }
+    .container-large-screen {
+      margin: 0 auto;
+      width: 80%;
+    }
+    @media (min-width: $desktop-width) {
+      .container-large-screen {
+        width: 70%;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.8rem;
+      }
+    }
+  }
 }
 
 .first-T {

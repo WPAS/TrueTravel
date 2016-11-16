@@ -9,4 +9,8 @@
     line-height: 1;
     color: $smallButShiny;
   }
+  @media (min-width: $tablet-width) {
+    font-size: 1.6rem;
+  }
+
 }
