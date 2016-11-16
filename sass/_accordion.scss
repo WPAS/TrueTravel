@@ -1,0 +1,39 @@
+#details {
+//    background: lighten($secondaryBackground, 10%);
+    padding: 1rem 0;
+    h1 {
+      margin: 0;
+      color: white; //to be variablized ;)
+      text-align: center;
+      text-shadow: 2px 2px 2px darken($secondaryBackground, 10%), 0 0 5px darken($secondaryBackground, 10%);
+      font-size: 1.5rem;
+    }
+}
+
+%accordionWidth {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.accordion {
+  font-size: 1.2rem;
+  dd {
+    display: none;
+    @extend %accordionWidth;
+    padding: .8rem;
+    background: lighten($secondaryBackground, 10%);
+  }
+  a {
+    @extend %accordionWidth;
+    padding: 1rem 0;
+    text-decoration: none;
+    background: $secondaryBackground;
+    display:block;
+    border-top: .1rem solid darken($secondaryBackground, 10%);
+    border-bottom: .1rem solid darken($secondaryBackground, 10%);
+    text-align: center;
+  }
+  a:link, a:visited {
+    color: white;
+  }
+}

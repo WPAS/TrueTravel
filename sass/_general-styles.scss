@@ -30,6 +30,13 @@ img, video, canvas {
 .container {
   width: 98%;
   margin: 0 auto;
+  @media (min-width: $tablet-width) {
+    width: 80%;
+  }
+  @media (min-width: $desktop-width) {
+    width: 70%;
+  }
+
 }
 
 .hidden {

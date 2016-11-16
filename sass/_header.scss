@@ -15,9 +15,6 @@ header {
     width: 50%;
     font-size: 1.2rem;
   }
-  span {
-    color: gold;
-  }
   %gallery-navs {
     position: absolute;
     display: block;
@@ -36,4 +33,8 @@ header {
     @extend %gallery-navs;
     left: 92%;
   }
+}
+
+.first-T {
+  color: $smallButShiny;
 }

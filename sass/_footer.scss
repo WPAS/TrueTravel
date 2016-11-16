@@ -1,0 +1,39 @@
+@mixin resp-image-wrap($img-height, $img-width) {
+  height: 0;
+  width: 100%;
+  padding-bottom: $img-height/$img-width * 100 + %;
+  position: relative;
+}
+
+%resp-image {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+}
+
+#footer-background {
+  background-image: url("../images/stonehenge-narrow.jpg");
+  @extend %resp-image;
+}
+
+footer {
+  @include resp-image-wrap(326,800);
+  background-position: bottom;
+  font-size: 1.4rem;
+  color: white;     //use variable later
+  .container {
+    height: 100%;
+    padding: 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  p {
+    margin: 0;
+  }
+  #copy {
+    font-size: .8rem;
+  }
+}

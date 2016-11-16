@@ -32,7 +32,17 @@
       left: 33%;
       top: 65%;
       width: 68%;
+      @media (min-width: $tablet-width) {
+        font-size: 1rem;
+        padding: .3rem .4rem .1rem;
+      }
     }
+      @media (min-width: $tablet-width) {
+        width: 30%;
+      }
+      @media (min-width: $desktop-width) {
+        width: 22.5%;
+      }
   }
   .modal {
     display: none;
@@ -42,6 +52,7 @@
     top: 1rem;
     background: lightblue; //should be changed into variable later
     padding-bottom: 1rem;
+    z-index: 1;
     h1 {
       width: 100%;
       margin-left: 0;

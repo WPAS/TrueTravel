@@ -6,7 +6,7 @@
 
 #nav-button, #hider {
   position: fixed;
-  left: 80%;
+  left: 84%;
   top: 1rem;
   border: none;
   border-radius: 10%;
@@ -37,5 +37,19 @@ nav {
       border-bottom: .1rem solid white;
     }
   }
-
+  @media (min-width: $tablet-width) {
+    top: 0;
+    background-color: rgba(0, 0, 0, .8);
+    ul {
+      width: 100%;
+      display: flex;
+      flex-justify: flex-end;
+      li {
+        flex: 0 1 auto;
+        background: none;
+        border: none;
+        text-align: right;
+      }
+    }
+  }
 }

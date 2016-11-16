@@ -68,7 +68,6 @@ btnPrev.addEventListener("click", function() {
 
 var morePlaces = document.querySelectorAll(".more-places");
 var placesRevealer = document.querySelector("#places-revealer");
-console.log(morePlaces);
 
 function test_match_media_with_listener1000(){
   var mq = window.matchMedia("(max-width: 1000px)");
@@ -77,17 +76,15 @@ function test_match_media_with_listener1000(){
 
   function WidthChange(mediaQuery) {
     if(mediaQuery.matches) {
-      console.log('yes');
       for (i = 0; i < morePlaces.length; i++) {
         morePlaces[i].classList.add("hidden");
       }
-      placesRevealer.classList.remove("hidden");
+      placesRevealer.style.display = "block";
     } else {
-      console.log('no');
       for (i = 0; i < morePlaces.length; i++) {
         morePlaces[i].classList.remove("hidden");
       }
-      placesRevealer.classList.add("hidden");
+      placesRevealer.style.display = "none";
     }
   }
 }
@@ -110,7 +107,6 @@ placesRevealer.addEventListener("click", function() {
 var figure = document.querySelectorAll("#places figure");
 var modalHeader = document.querySelectorAll(".modal h1");
 var modalHider = document.querySelectorAll(".modal-hider")
-console.log(modalHider);
 
 for (i=0; i<figure.length; i++) {
   figure[i].addEventListener("click", function() {
@@ -131,21 +127,40 @@ function hideModal(element) {
 hideModal(modalHeader);
 hideModal(modalHider);
 
+//accordion
+
+var accordionHeaders = document.querySelectorAll("dt a");
+console.log(accordionHeaders);
+
+for (i = 0; i < accordionHeaders.length; i++) {
+  accordionHeaders[i].addEventListener("click", function(event) {
+    event.preventDefault();
+    var accordionId = this.getAttribute("href");
+    var textToShow = document.querySelector(accordionId);
+    if (this.classList.contains("opened")) {
+      textToShow.style.display = "none";
+      this.classList.remove("opened");
+    } else {
+      var openedText = document.querySelectorAll(".opened");
+      for (i = 0; i < openedText.length; i++) {
+        openedText[i].parentElement.nextElementSibling.style.display = "none";
+        openedText[i].classList.remove("opened");
+      }
+      textToShow.style.display = "block";
+      this.classList.add("opened");
+    }
+  });
+}
 
 
-
-
-//IS CLICK ALSO TOUCH???????????????
+//add TOUCH events to current click events for mobile
 
 
 // TO BE ADDED
 //
 // mobile nav animation
 //
-//
-// modal
-//
-// accordion
+// modal and accordion animations
 //
 // do not forget anchor scrolling animation script!!
 //
