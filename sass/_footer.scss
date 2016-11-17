@@ -16,6 +16,9 @@
 #footer-background {
   background-image: url("../images/stonehenge-narrow.jpg");
   @extend %resp-image;
+  @media (min-width: $desktop-width) {
+    background-image: url("../images/stonehenge-narrow-large.jpg");
+  }
 }
 
 footer {
@@ -43,6 +46,7 @@ footer {
     }
   }
   @media (min-width: $desktop-width){
+    @include resp-image-wrap(460,1600);
     font-size: 3rem;
   }
 }

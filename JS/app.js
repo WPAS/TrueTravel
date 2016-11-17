@@ -104,6 +104,14 @@ placesRevealer.addEventListener("click", function() {
 
 //modal code
 
+function getOffset(el) {
+    var bodyRect = document.body.getBoundingClientRect(),
+    elemRect = el.getBoundingClientRect(),
+    offsetTop = elemRect.top - bodyRect.top;
+    return offsetTop;
+}
+//function thanks to Andy Earnshaw / http://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element
+
 var figure = document.querySelectorAll("#places figure");
 var modalHeader = document.querySelectorAll(".modal h1");
 var modalHider = document.querySelectorAll(".modal-hider")
@@ -112,9 +120,12 @@ for (i=0; i<figure.length; i++) {
   figure[i].addEventListener("click", function() {
     var modalId = this.dataset.modal;
     var modalToShow = document.querySelector(modalId);
+    modalToShow.style.top = getOffset(this) + "px";
     modalToShow.style.display = "block";
   });
 }
+
+
 
 function hideModal(element) {
   for (i = 0; i < element.length; i++) {
@@ -126,6 +137,9 @@ function hideModal(element) {
 
 hideModal(modalHeader);
 hideModal(modalHider);
+
+//modal positioning
+
 
 //accordion
 

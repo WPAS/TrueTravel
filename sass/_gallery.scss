@@ -6,24 +6,33 @@
 }
 
 #places {
-  background: $mainBackground;
+  background: linear-gradient(to bottom, $smallButShiny, lighten($smallButShiny, 5%), $mainBackground, lighten($mainBackground, 5%), lighten($mainBackground, 10%));
   padding-bottom: .5rem;
-  position: relative;
   h1 {
     @extend %goldBar;
-    width: 102%;
+    width: 100%;
     text-align: center;
-    margin: 0;
-    padding: .5rem;
-    margin-left: -1%;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
+    padding: 1rem 0 .5rem;
+    border: none;
+    @media (min-width: $desktop-width) {
+      font-size: 1.8rem;
+      padding: 2rem 0 .5rem;
+    }
   }
   figure {
     position: relative;
     width: 47%;
-    margin: 1%;
+    margin: 1% 0 1% 1%;
     img {
     border-radius: 50%;
+    }
+    @media (min-width: $tablet-width) {
+      width: 30%;
+      margin: 2% 0 2% 2%;
+    }
+    @media (min-width: $desktop-width) {
+      width: 30%;
     }
     figcaption {
       @extend %goldBar;
@@ -36,13 +45,11 @@
         font-size: 1rem;
         padding: .3rem .4rem .1rem;
       }
-    }
-      @media (min-width: $tablet-width) {
-        width: 30%;
-      }
       @media (min-width: $desktop-width) {
-        width: 22.5%;
+        font-size: 1.2rem;
+        font-weight: 700;
       }
+    }
   }
   .modal {
     display: none;
@@ -54,6 +61,7 @@
     padding-bottom: 1rem;
     z-index: 1;
     h1 {
+      @extend %goldBar;
       width: 100%;
       margin-left: 0;
     }
