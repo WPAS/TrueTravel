@@ -1,7 +1,12 @@
+//colors and backgrounds variables
+
 $smallButShiny: gold;
 $mainBackground: lighten(gold, 25%);
 $secondaryBackground: lightblue;
 $shinyEdges: darken(gold, 25%);
+$gradientGoldBackground: linear-gradient(to bottom, $smallButShiny, lighten($smallButShiny, 5%), $mainBackground, lighten($mainBackground, 5%), lighten($mainBackground, 10%));
+
+//media queries variables
 $tablet-width: 650px;
 $desktop-width: 1000px;
 $header-photo-width: 800px;

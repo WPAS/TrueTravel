@@ -114,18 +114,20 @@ function getOffset(el) {
 
 var figure = document.querySelectorAll("#places figure");
 var modalHeader = document.querySelectorAll(".modal h1");
-var modalHider = document.querySelectorAll(".modal-hider")
+var modalHider = document.querySelectorAll(".modal-hider");
+var modals = document.querySelectorAll(".modal")
 
 for (i=0; i<figure.length; i++) {
   figure[i].addEventListener("click", function() {
+    for (j=0; j<figure.length; j++) {
+      modals[j].style.display = "none";
+    }   //hiding opened modal
     var modalId = this.dataset.modal;
     var modalToShow = document.querySelector(modalId);
     modalToShow.style.top = getOffset(this) + "px";
     modalToShow.style.display = "block";
   });
 }
-
-
 
 function hideModal(element) {
   for (i = 0; i < element.length; i++) {
@@ -166,8 +168,76 @@ for (i = 0; i < accordionHeaders.length; i++) {
   });
 }
 
+//navigation animation not working with click event
 
-//add TOUCH events to current click events for mobile
+// function scrollTo(element, to, duration) {
+//     if (duration <= 0) return;
+//     var difference = to - element.scrollTop;
+//     console.log(to, element.scrollTop);
+//     var perTick = difference / duration * 10;
+//     console.log(difference, perTick, duration);
+//
+//     setTimeout(function() {
+//         element.scrollTop = element.scrollTop + perTick;
+//         console.log(element.scrollTop, perTick + " perTick info");
+//         if (element.scrollTop === to) return;
+//         scrollTo(element, to, duration - 10);
+//     }, 10);
+// }
+//
+// var navigators = document.querySelectorAll("nav a");
+//
+// for (i=1; i < navigators.length; i++) {
+//   navigators[i].onclick = function() {
+//     var elmntId = this.getAttribute("href");
+//     console.log(this.innerText);
+//     var elmnt = document.querySelector(elmntId);
+//     console.log(elmnt.offsetTop, elmnt.innerText);
+//     scrollTo(document.body, elmnt.offsetTop, 600);
+//   }
+// }
+
+// elmnt = document.getElementById("details");
+// console.log(elmnt.offsetTop);
+// scrollTo(document.body, elmnt.offsetTop, 600);
+//
+// setTimeout(function() {
+//   elmnt2 = document.getElementById("places");
+//   scrollTo(document.body, elmnt2.offsetTop, 600);
+// }, 1000);
+
+//navigation animation - working but I am not satisfied with effect it always starts from top, needs remake
+
+// function animate(elem,style,unit,from,to,time,prop) {
+//     if( !elem) return;
+//     var start = new Date().getTime(),
+//         timer = setInterval(function() {
+//             var step = Math.min(1,(new Date().getTime()-start)/time);
+//             if (prop) {
+//                 elem[style] = (from+step*(to-from))+unit;
+//             } else {
+//                 elem.style[style] = (from+step*(to-from))+unit;
+//             }
+//             if( step == 1) clearInterval(timer);
+//         },25);
+//     elem.style[style] = from+unit;
+// }
+//
+// // function above was taken from http://stackoverflow.com/questions/17733076/smooth-scroll-anchor-links-without-jquery
+// // answer by Ian
+//
+// var navigators = document.querySelectorAll("nav a");
+//
+// for (i=0; i < navigators.length; i++) {
+//   navigators[i].addEventListener("click", function() {
+//     var targetsId = this.getAttribute("href");
+//     var target = document.querySelector(targetsId);
+//     animate(document.body, "scrollTop", "", 0, target.offsetTop, 2000, true);
+//   });
+// }
+
+
+//add TOUCH events to current click events for mobile?
 
 
 // TO BE ADDED
@@ -179,6 +249,8 @@ for (i = 0; i < accordionHeaders.length; i++) {
 // do not forget anchor scrolling animation script!!
 //
 // Later, if time allows - form validation
+
+
 
 
 });

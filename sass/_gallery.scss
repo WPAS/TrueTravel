@@ -6,8 +6,13 @@
 }
 
 #places {
-  background: linear-gradient(to bottom, $smallButShiny, lighten($smallButShiny, 5%), $mainBackground, lighten($mainBackground, 5%), lighten($mainBackground, 10%));
+  background: $gradientGoldBackground;
   padding-bottom: .5rem;
+  @media (min-width: $desktop-width) {
+    .container {
+      width: 80%;
+    }
+  }  
   h1 {
     @extend %goldBar;
     width: 100%;
@@ -57,7 +62,7 @@
     width: 94%;
     left: 3%;
     top: 1rem;
-    background: lightblue; //should be changed into variable later
+    background: $secondaryBackground;
     padding-bottom: 1rem;
     z-index: 1;
     h1 {
@@ -76,8 +81,15 @@
       display: block;
       margin: 0 auto;
     }
+    @media (min-width: $tablet-width) {
+      width: 90%;
+      left: 5%;
+    }
+    @media (min-width: $desktop-width) {
+      width: 80%;
+      left: 10%;
+    }
   }
-
 }
 
 #places-revealer, .modal-hider {

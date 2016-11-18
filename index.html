@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
     <title>True Travel</title>
     <link rel="stylesheet" href="css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
 <nav>
   <div class="container hidden menu">
     <ul>
+      <li><a href="#top">TOP</a></li>
       <li><a href="#general-info">WHAT</a></li>
       <li><a href="#places">WHERE</a></li>
       <li><a href="#details">HOW</a></li>
@@ -19,12 +21,13 @@
   <button id="nav-button">Menu</button>
   <button id="hider" class="hidden">Hide</button>
 </nav>
-<header>
+<header id="#top">
   <div class="container-large-screen">
     <span id="gallery-nav1">&lt;</span>
     <span id="gallery-nav2">&gt;</span>
       <div class="slider">
-        <figure><img src="images/acropolis.jpg" alt="Acropolis in Athens" data-author="Mstyslav Chernov CC" srcset="images/acropolis_large.jpg 800w"></figure>
+        <figure><img src="images/acropolis.jpg" alt="Acropolis in Athens" data-author="Mstyslav Chernov CC"></figure>
+        <!-- srcset="images/acropolis_large.jpg 800w" - caused bug and this photo wasn't rendering properly in Edge here  https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7778808/ Microsoft wrote that it is  working on this issue-->
         <article>
           <h1><span class="first-T">T</span>RUE<br><span class="first-T">T</span>RAVELS</h1>
           <p>Donec dignissim arcu nec elit faucibus condimentum.</p>
@@ -56,7 +59,7 @@
     </article>
   </div>
 </section>
-<section id="places">  <!-- here will come places photos -->
+<section id="places">
   <h1>With us you can see</h1>
   <div class="container">
       <article>
@@ -204,7 +207,7 @@
       <p> Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
       <p> Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
       <button class="modal-hider">Cancel</button>
-    </article>
+  </article>
 </section>
 <section id="details">  <!-- additional info accordion -->
   <div class="container">
@@ -250,9 +253,22 @@
 </section>
 <section id="form"> <!-- form -->
   <div class="container">
-    <!-- <input placeholder="one day here will be a big form"> -->
+    <h1>Subscribe to our newsletter</h2>
+    <form class="register-form">
+    	<ul class="form-fields"><!-- made in ul due to flexbox bug with fieldset -->
+    		<li><label for="name">Name:</label><input type="text" name="name" id="name" placeholder="your full name"></li>
+        <li><label for="email">Email:</label><input type="email" name="email" id="email" placeholder="your email"></li>
+      </ul>
+      <ul class="form-fields">
+        <li><label for="name">Country:</label><input type="text" name="name" id="name" placeholder="your country of residence"></li>
+        <li><label for="info">Info:</label><textarea id="info" name="info" placeholder="write which regions you want to visit"></textarea></li>
+      </ul>
+      <button type="submit">Submit</button>
+    </form>
   </div>
 </section>
+
+
 <footer>
   <div id="footer-background">
     <div class="container">
