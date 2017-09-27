@@ -31,7 +31,8 @@ header {
   }
   #gallery-nav2 {
     @extend %gallery-navs;
-    left: 92%;
+    right: 3%;
+    text-align: right;
   }
   figure {
     width: 100%;

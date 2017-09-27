@@ -115,7 +115,12 @@ function getOffset(el) {
 var figure = document.querySelectorAll("#places figure");
 var modalHeader = document.querySelectorAll(".modal h1");
 var modalHider = document.querySelectorAll(".modal-hider");
-var modals = document.querySelectorAll(".modal")
+var modals = document.querySelectorAll(".modal");
+var cover = document.querySelector(".modal-cover");
+
+var bodyRect = document.body.getBoundingClientRect();
+var coverHeight = bodyRect.height;
+console.log(bodyRect);
 
 for (i=0; i<figure.length; i++) {
   figure[i].addEventListener("click", function() {
@@ -125,6 +130,8 @@ for (i=0; i<figure.length; i++) {
     var modalId = this.dataset.modal;
     var modalToShow = document.querySelector(modalId);
     modalToShow.style.top = getOffset(this) + "px";
+    cover.style.height = coverHeight + "px";
+    cover.style.display = "block";
     modalToShow.style.display = "block";
   });
 }
@@ -132,6 +139,7 @@ for (i=0; i<figure.length; i++) {
 function hideModal(element) {
   for (i = 0; i < element.length; i++) {
     element[i].addEventListener("click", function() {
+        cover.style.display = "none";
         this.parentElement.style.display = "none";
     });
   }
@@ -139,7 +147,6 @@ function hideModal(element) {
 
 hideModal(modalHeader);
 hideModal(modalHider);
-
 
 //accordion
 
