@@ -26,6 +26,7 @@
     }
   }
   figure {
+    cursor: pointer;
     position: relative;
     width: 47%;
     margin: 1% 0 1% 1%;
@@ -41,7 +42,6 @@
     }
     figcaption {
       @extend %goldBar;
-      cursor: pointer;
       position: absolute;
       font-size: .8rem;
       left: 33%;
@@ -55,6 +55,9 @@
         font-size: 1.2rem;
         font-weight: 700;
       }
+      &:hover {
+        background-color: $secondaryBackground;
+      }
     }
   }
   .modal {
@@ -66,15 +69,17 @@
     background: $secondaryBackground;
     padding-bottom: 1rem;
     z-index: 101;
-    h1 {
+    h2 {
       @extend %goldBar;
       width: 100%;
-      margin-left: 0;
+      margin: 0;
       padding: 1rem 0;
+      text-align: center;
       cursor: pointer;
     }
-    h3 {
-      font-size: 1rem;
+    .intro {
+      font-weight: bold;
+      font-size: 1.2rem;
       text-align: center;
     }
     p {
@@ -107,6 +112,9 @@
   padding-bottom: .2rem;
   &:focus {
     outline: none;
+  }
+  &:hover {
+    background: $secondaryBackground;
   }
 }
 

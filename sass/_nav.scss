@@ -1,13 +1,13 @@
 %mobile-nav-background {
     background-color: rgba(0, 0, 0, .8);
-    padding: .6rem;
     color: gold;
 }
 
 #nav-button, #hider {
   position: fixed;
-  left: 84%;
+  right: 10%;
   top: 1rem;
+  padding: 1rem;
   border: none;
   border-radius: 10%;
   @extend %mobile-nav-background;
@@ -20,9 +20,15 @@ nav {
   z-index: 10;
   a {
     text-decoration: none;
-    display: block; //to increase area reacting on click/touch
+    display: block;
+    height: auto;
+    padding: .8rem;
     &:link, &:visited {
       color: gold;
+    }
+    &:hover {
+      background-color: white;
+      color: black;
     }
   }
   ul {
@@ -42,15 +48,21 @@ nav {
     background-color: rgba(0, 0, 0, .8);
     ul {
       padding-right: 1rem;
-      text-align: right;
       display: flex;
       justify-content: flex-end;
       li {
-        width: 15%;
+        width: 20%;
         margin: 0;
         background: none;
         border: none;
-        text-align: right;
+        text-align: center;
+      }
+    }
+  }
+  @media (min-width: $desktop-width) {
+    ul {
+      li {
+        width: 15%;
       }
     }
   }

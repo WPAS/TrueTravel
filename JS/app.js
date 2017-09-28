@@ -5,6 +5,14 @@ document.addEventListener("DOMContentLoaded", function(){
 var button = document.querySelector("#nav-button");
 var navigation = document.querySelector(".menu");
 var hider = document.querySelector("#hider")
+var menuLinks = document.querySelectorAll("nav a");
+
+
+function hideMobileMenu() {
+  navigation.classList.add("hidden");
+  hider.classList.add("hidden");
+  button.classList.remove("hidden");
+}
 
 function test_match_media_with_listener(){
   var mq = window.matchMedia("(max-width: 650px)");
@@ -15,7 +23,13 @@ function test_match_media_with_listener(){
     if(mediaQuery.matches) {
       navigation.classList.add("hidden");
       button.classList.remove("hidden");
+      for (i = 0; i < menuLinks.length; i++) {
+        menuLinks[i].addEventListener("click", hideMobileMenu);
+      }
     } else {
+      for (i = 0; i < menuLinks.length; i++) {
+        menuLinks[i].removeEventListener("click", hideMobileMenu);
+      }
       navigation.classList.remove("hidden");
       button.classList.add("hidden");
       hider.classList.add("hidden");
@@ -32,9 +46,7 @@ button.addEventListener("click", function() {
 });
 
 hider.addEventListener("click", function() {
-  navigation.classList.add("hidden");
-  button.classList.remove("hidden");
-  hider.classList.add("hidden");
+  hideMobileMenu();
 }); //mobile nav toggle end
 
 //slider
@@ -68,6 +80,7 @@ btnPrev.addEventListener("click", function() {
 
 var morePlaces = document.querySelectorAll(".more-places");
 var placesRevealer = document.querySelector("#places-revealer");
+var photos = document.querySelectorAll("#places figure");
 
 function test_match_media_with_listener1000(){
   var mq = window.matchMedia("(max-width: 1000px)");
@@ -102,25 +115,23 @@ placesRevealer.addEventListener("click", function() {
   }
 })
 
+//highlithing photos titles when hovering over photos
+for (i = 0; i < photos.length; i++) {
+  photos[i].addEventListener("mouseenter", function() {
+    this.querySelector("figcaption").style.backgroundColor = "lightblue";
+  });
+  photos[i].addEventListener("mouseleave", function() {
+    this.querySelector("figcaption").style.backgroundColor = "gold";
+  });
+}
+
 //modal code
 
-function getOffset(el) {
-    var bodyRect = document.body.getBoundingClientRect(),
-    elemRect = el.getBoundingClientRect(),
-    offsetTop = elemRect.top - bodyRect.top;
-    return offsetTop;
-}
-//function getOffset thanks to Andy Earnshaw / http://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element
-
 var figure = document.querySelectorAll("#places figure");
-var modalHeader = document.querySelectorAll(".modal h1");
+var modalHeader = document.querySelectorAll(".modal h2");
 var modalHider = document.querySelectorAll(".modal-hider");
 var modals = document.querySelectorAll(".modal");
 var cover = document.querySelector(".modal-cover");
-
-var bodyRect = document.body.getBoundingClientRect();
-var coverHeight = bodyRect.height;
-console.log(bodyRect);
 
 for (i=0; i<figure.length; i++) {
   figure[i].addEventListener("click", function() {
@@ -129,7 +140,9 @@ for (i=0; i<figure.length; i++) {
     }   //hiding opened modal
     var modalId = this.dataset.modal;
     var modalToShow = document.querySelector(modalId);
-    modalToShow.style.top = getOffset(this) + "px";
+    modalToShow.style.top = window.scrollY + 15 + "px";
+    var bodyRect = document.body.getBoundingClientRect();
+    var coverHeight = bodyRect.height;
     cover.style.height = coverHeight + "px";
     cover.style.display = "block";
     modalToShow.style.display = "block";
@@ -148,10 +161,16 @@ function hideModal(element) {
 hideModal(modalHeader);
 hideModal(modalHider);
 
+cover.addEventListener('click', function() {
+  cover.style.display = "none";
+  for (i=0; i<modals.length; i++) {
+    modals[i].style.display = "none";
+  }
+})
+
 //accordion
 
 var accordionHeaders = document.querySelectorAll("dt a");
-console.log(accordionHeaders);
 
 for (i = 0; i < accordionHeaders.length; i++) {
   accordionHeaders[i].addEventListener("click", function(event) {

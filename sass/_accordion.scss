@@ -47,10 +47,15 @@
     border-top: .1rem solid darken($secondaryBackground, 10%);
     border-bottom: .1rem solid darken($secondaryBackground, 10%);
     text-align: center;
+    &:link, &:visited {
+      color: white;
+    }
+    &:hover {
+      background-color: $smallButShiny;
+      font-weight: bold;
+    }
   }
-  a:link, a:visited {
-    color: white;
-  }
+
   @media (min-width: $tablet-width) {
     font-size: 1.4rem;
     dd {
