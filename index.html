@@ -27,22 +27,25 @@
     <span id="gallery-nav1">&lt;</span>
     <span id="gallery-nav2">&gt;</span>
       <div class="slider">
-        <figure><img src="images/Acropolis.jpg" alt="Acropolis in Athens" data-author="Mstyslav Chernov CC" srcset="images/Acropolis.jpg 800w, images/Acropolis_large.jpg 1200w"></figure>
-        <!-- srcset="images/acropolis_large.jpg 800w" - caused bug and this photo wasn't always rendering properly in Edge here  https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7778808/ Microsoft wrote that it is  working on this issue-->
+        <figure><img src="images/Acropolis.jpg" alt="Acropolis in Athens" data-author="Mstyslav Chernov CC"
+          srcset="images/Acropolis.jpg 800w, images/Acropolis_large.jpg 1200w" sizes="(min-width: 800px) 80vw, 100vw"></figure>
+        <!-- srcset="images/acropolis_large.jpg 1200w" - caused bug and this photo wasn't always rendering properly in Edge here  https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7778808/ Microsoft wrote that it is  working on this issue-->
         <article>
           <h1><span class="first-T">T</span>RUE<br><span class="first-T">T</span>RAVELS</h1>
           <p>Donec dignissim arcu nec elit faucibus condimentum.</p>
         </article>
       </div>
       <div class="slider hidden">
-        <figure><img src="images/Himeji.jpg" alt="Castle Himeji in Japan" data-author="Bernard Gagnon CC" srcset="images/Himeji.jpg 800w, images/Himeji_large.jpg 1200w"></figure>
+        <figure><img src="images/Himeji.jpg" alt="Castle Himeji in Japan" data-author="Bernard Gagnon CC"
+          srcset="images/Himeji.jpg 800w, images/Himeji_large.jpg 1200w" sizes="(min-width: 800px) 80vw, 100vw"></figure>
         <article>
           <h1><span class="first-T">T</span>RUE<br><span class="first-T">T</span>RAVELS</h1>
           <p>Maecenas sollicitudin eros in quam imperdiet placerat.</p>
         </article>
       </div>
       <div class="slider hidden">
-        <figure><img src="images/Krak_des_Chevaliers.jpg" alt="Crusaders castle Krak des Chevaliers" data-author="Ergo CC" srcset="images/Krak_des_Chevaliers.jpg 800w, images/Krak_des_Chevaliers_large.jpg 1200w"></figure>
+        <figure><img src="images/Krak_des_Chevaliers.jpg" alt="Crusaders castle Krak des Chevaliers" data-author="Ergo CC"
+          srcset="images/Krak_des_Chevaliers.jpg 800w, images/Krak_des_Chevaliers_large.jpg 1200w" sizes="(min-width: 800px) 80vw, 100vw"></figure>
         <article>
           <h1><span class="first-T">T</span>RUE<br><span class="first-T">T</span>RAVELS</h1>
           <p>Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum.</p>
@@ -50,20 +53,21 @@
       </div>
   </div>   <!-- whole header -->
 </header>
-<section id="general-info">  <!-- here will come intro text -->
+<div id="general-info">  <!-- here will come intro text -->
   <div class="container">
     <article>
+      <h2>Experience the mysteries</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum.
       </p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum.
       </p>
     </article>
   </div>
-</section>
-<section id="places">
-  <h1>With us you can see</h1>
+</div>
+<div id="places">
   <div class="container">
       <article>
+        <h2>With us you can see</h2>
         <figure data-modal="#modal1"><img src="images/Ahu_Tongariki.jpg" alt="Easter Island" data-author="Rivi CC">
           <figcaption>Easter Island</figcaption>
         </figure>
@@ -101,6 +105,7 @@
           <figcaption>Greek temples</figcaption>
         </figure>
       </article>
+    </div>
     <button id="places-revealer">Check more places</button> <!-- this button will be only for mobiles and tablets -->
     <article class="modal" id="modal1">
       <h2>Eastern Island</h2>
@@ -209,11 +214,11 @@
       <p> Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
       <button class="modal-hider">Close</button>
     </article>
-</section>
-<section id="details">  <!-- additional info accordion -->
+</div>
+<div id="details">  <!-- additional info accordion -->
   <div class="container">
     <article class="accordion">
-      <h1>How we travel</h1>
+      <h2>How we travel</h2>
        <dl>
          <dt>
            <a href="#accordion1">Transport</a>
@@ -251,23 +256,23 @@
        </dl>
      </article>
   </div> <!-- container -->
-</section>
-<section id="form"> <!-- form -->
+</div>
+<div id="form"> <!-- form -->
   <div class="container">
-    <h1>Subscribe to our newsletter</h1>
+    <h2>Subscribe to our newsletter</h2>
     <form class="register-form" method="POST">
     	<ul class="form-fields"><!-- made in ul due to flexbox bug with fieldset -->
     		<li><label for="name">Name:</label><input type="text" name="name" id="name" placeholder="your full name"></li>
         <li><label for="email">Email:</label><input type="email" name="email" id="email" placeholder="your email"></li>
       </ul>
       <ul class="form-fields">
-        <li><label for="name">Country:</label><input type="text" name="name" id="name" placeholder="your country of residence"></li>
+        <li><label for="name">Country:</label><input type="text" name="country" id="country" placeholder="your country of residence"></li>
         <li><label for="info">Info:</label><textarea id="info" name="info" placeholder="write which regions you want to visit"></textarea></li>
       </ul>
       <button type="submit">Submit</button>
     </form>
   </div>
-</section>
+</div>
 <footer>
   <div id="footer-background">
     <div class="container">
