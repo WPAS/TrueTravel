@@ -205,10 +205,10 @@ function validate(e) {
   var info = document.querySelector('#info');
   var emailRE = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  var senderName = e.target.name.value;
-  var senderEmail = e.target.email.value;
-  var senderCountry = e.target.country.value;
-  var senderInfo = e.target.info.value;
+  var senderName = e.target.name.value.trim();
+  var senderEmail = e.target.email.value.trim();
+  var senderCountry = e.target.country.value.trim();
+  var senderInfo = e.target.info.value.trim();
 
   error.innerHTML = '';
   var fields = [name, email, country, info];
@@ -243,7 +243,6 @@ function validate(e) {
     error.style.border = "2px solid red";
     e.preventDefault();
   }
-
 }
 
 var form = document.querySelector('.register-form');
@@ -251,9 +250,6 @@ var form = document.querySelector('.register-form');
 form.addEventListener('submit', function(e) {
   validate(e);
 })
-
-
-
 
 
 });
