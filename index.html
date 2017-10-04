@@ -263,14 +263,15 @@
 <div id="form"> <!-- form -->
   <div class="container">
     <h2>Subscribe to our newsletter</h2>
+    <div id="error"></div>
     <form class="register-form" method="POST">
     	<ul class="form-fields"><!-- made in ul due to flexbox bug with fieldset -->
-    		<li><label for="name">Name:</label><input type="text" name="name" id="name" placeholder="your full name"></li>
-        <li><label for="email">Email:</label><input type="email" name="email" id="email" placeholder="your email"></li>
+    		<li><label for="name">Name:</label><input type="text" name="name" id="name" placeholder="Your full name"></li>
+        <li><label for="email">Email:</label><input type="email" name="email" id="email" placeholder="Your email"></li>
       </ul>
       <ul class="form-fields">
-        <li><label for="name">Country:</label><input type="text" name="country" id="country" placeholder="your country of residence"></li>
-        <li><label for="info">Info:</label><textarea id="info" name="info" placeholder="write which regions you want to visit"></textarea></li>
+        <li><label for="name">Country:</label><input type="text" name="country" id="country" placeholder="Your country of residence"></li>
+        <li><label for="info">Info:</label><textarea id="info" name="info" placeholder="Please write which regions would you like to visit"></textarea></li>
       </ul>
       <button type="submit">Submit</button>
     </form>

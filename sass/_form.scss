@@ -26,6 +26,17 @@
       width: 80%;
     }
   }
+  #error {
+    color: red;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 10px;
+    p {
+      margin: 0 auto;
+      padding: 3px;
+      width: 16rem;
+    }
+  }
 
 }
 
@@ -64,5 +75,9 @@
     font-size: 120%;
     font-weight: 900;
     border: none;
+  }
+  .invalid-input {
+    background: rgb(250,188,188);
+    border: 1px solid red;
   }
 }

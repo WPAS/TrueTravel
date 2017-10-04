@@ -192,4 +192,68 @@ for (i = 0; i < accordionHeaders.length; i++) {
   });
 }
 
+//validation
+
+function validate(e) {
+  var formDiv = document.querySelector('#form .container');
+  var error = document.querySelector('#error');
+  var validated = true;
+
+  var name = document.querySelector('#name');
+  var email = document.querySelector('#email');
+  var country = document.querySelector('#country');
+  var info = document.querySelector('#info');
+  var emailRE = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  var senderName = e.target.name.value;
+  var senderEmail = e.target.email.value;
+  var senderCountry = e.target.country.value;
+  var senderInfo = e.target.info.value;
+
+  error.innerHTML = '';
+  var fields = [name, email, country, info];
+
+  for(i = 0; i < fields.length; i++) {
+    fields[i].classList.remove('invalid-input');
+  }
+
+  if (senderName.length < 3) {
+    error.innerHTML += "<p>Please write your name</p>";
+    validated = false;
+    name.classList.add('invalid-input');
+  }
+  if (!emailRE.test(senderEmail)) {
+    error.innerHTML += "<p>Please write a valid email</p>";
+    validated = false;
+    email.classList.add('invalid-input');
+  }
+  if (senderCountry.length < 3) {
+    error.innerHTML += "<p>Please write your country</p>";
+    validated = false;
+    country.classList.add('invalid-input');
+  }
+  if (senderInfo.length < 10) {
+    var errorInfo = senderInfo.length === 0 ? "<p>Please write a message</p>" : "<p>Your message seems to be too short</p>";
+    error.innerHTML += errorInfo;
+    validated = false;
+    info.classList.add('invalid-input');
+  }
+
+  if(validated === false) {
+    error.style.border = "2px solid red";
+    e.preventDefault();
+  }
+
+}
+
+var form = document.querySelector('.register-form');
+
+form.addEventListener('submit', function(e) {
+  validate(e);
+})
+
+
+
+
+
 });
